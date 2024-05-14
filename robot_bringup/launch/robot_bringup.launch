@@ -7,4 +7,6 @@
     <include file="$(find robotiq_2f_gripper_control)/launch/robotiq_2f_85_gripper_rtu.launch">
         <arg name="port" value="/dev/ttyUSB0" />
     </include>
+    <include file="$(find spacenav_node)/launch/classic.launch">
+    </include>
 </launch>
