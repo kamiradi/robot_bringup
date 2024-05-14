@@ -11,4 +11,7 @@
     </include>
 
     <node name="state_machine" pkg="switching_system" type="state_machine.py" output="screen" />
+    <group ns="keyframes">
+        <rosparam file="$(find switching_system)/config/keyframes.yaml" />
+    </group>
 </launch>
