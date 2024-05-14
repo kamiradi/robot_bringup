@@ -8,6 +8,8 @@ The following launch file is my workhorse for the robot. It runs the following:
 - `spacenav_node` to launch the spacenav 
 - `space_teleop` node for the teleoperation
 
+To start the robot and robotiq gripper, you can run the following launch file
+
 ```
 roslaunch robot_bringup robot_bringup.launch
 ```
