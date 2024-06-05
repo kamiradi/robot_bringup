@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<launch>
+    <include file="$(find serl_franka_controllers)/launch/impedance.launch" >
+        <arg name="robot_ip" value="192.168.106.99" />
+        <arg name="load_gripper" value="false" />
+    </include>
+    <include file="$(find robotiq_2f_gripper_control)/launch/robotiq_2f_85_gripper_rtu.launch">
+        <arg name="port" value="/dev/ttyUSB0" />
+    </include>
+    <include file="$(find spacenav_node)/launch/classic.launch">
+    </include>
+
+    <node name="space_teleop" pkg="cartesian_teleop" type="estimation_teleop.py" output="screen" />
+</launch>
