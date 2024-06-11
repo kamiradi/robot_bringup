@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
-    <include file="$(find serl_franka_controllers)/launch/impedance.launch" >
+    <arg name="rviz_config" default="$(find robot_bringup)/rviz/robot_bringup.rviz"/>
+    <include file="$(find robot_bringup)/launch/impedance_bringup.launch" >
         <arg name="robot_ip" value="192.168.106.99" />
         <arg name="load_gripper" value="false" />
     </include>
@@ -9,6 +10,7 @@
     </include>
     <include file="$(find spacenav_node)/launch/classic.launch">
     </include>
+    <node name="rviz" type="rviz" output="screen" pkg="rviz" args="-d $(arg rviz_config)" />
 
     <node name="arm_action_server" pkg="switching_system" type="action_server_cmd_pose.py" output="screen" />
     <group ns="keyframes">
