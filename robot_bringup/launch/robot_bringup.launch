@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
     <arg name="rviz_config" default="$(find robot_bringup)/rviz/robot_bringup.rviz"/>
+    <arg name="juggler_config" default="$(find robot_bringup)/config/pltjugg.xml"/>
     <include file="$(find robot_bringup)/launch/impedance_bringup.launch" >
         <arg name="robot_ip" value="192.168.106.99" />
         <arg name="load_gripper" value="false" />
@@ -11,4 +12,5 @@
     <include file="$(find spacenav_node)/launch/classic.launch">
     </include>
     <node name="rviz" type="rviz" output="screen" pkg="rviz" args="-d $(arg rviz_config)" />
+    <node name="plotjuggler" type="plotjuggler" output="screen" pkg="plotjuggler" args="-l $(arg juggler_config)" />
 </launch>

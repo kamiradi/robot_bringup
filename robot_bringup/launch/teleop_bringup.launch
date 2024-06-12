@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
     <arg name="rviz_config" default="$(find robot_bringup)/rviz/robot_bringup.rviz"/>
-    <include file="$(find serl_franka_controllers)/launch/impedance.launch" >
+    <include file="$(find robot_bringup)/launch/impedance_bringup.launch" >
         <arg name="robot_ip" value="192.168.106.99" />
         <arg name="load_gripper" value="false" />
     </include>
