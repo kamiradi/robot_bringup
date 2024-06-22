@@ -16,6 +16,6 @@
 
     <node name="arm_action_server" pkg="switching_system" type="action_server_cmd_pose.py" output="screen" />
     <group ns="keyframes">
-        <rosparam file="$(find switching_system)/config/estimation_frames.yaml" />
+        <rosparam file="$(find switching_system)/config/gear_insertion.yaml" />
     </group>
 </launch>
